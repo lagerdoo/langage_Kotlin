@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://github.com/uvsq21801511/langage_Kotlin/blob/master/assets/css/style.scss">
+<link rel="stylesheet" langage_Kotlin/assets/css/style.scss>
 
 <nav>
 	<ul>
