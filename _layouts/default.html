@@ -1,40 +1,73 @@
-
 ‭<!‬DOCTYPE html‭>‬
-‭<‬html‭>‬
-‭<‬head‭>‬
-‭<‬meta charset‭="‬utf-8‭" />‬
-‭<‬title‭>‬ This is test CSS‭</‬title‭>‬
+‭<!--[‬if IE 7‭]>         <‬html lang‭="‬fa‭" ‬dir‭="‬rtl‭" ‬class‭="‬lt-ie10‭ ‬lt-ie9‭ ‬lt-ie8‭"> <![‬endif‭]-->‬
+‭<!--[‬if IE 8‭]>         <‬html lang‭="‬fa‭" ‬dir‭="‬rtl‭" ‬class‭="‬lt-ie10‭ ‬lt-ie9‭"> <![‬endif‭]-->‬
+‭<!--[‬if IE 9‭]>         <‬html lang‭="‬fa‭" ‬dir‭="‬rtl‭" ‬class‭="‬lt-ie10‭"> <![‬endif‭]-->‬
+‭<!--[‬if gt IE 9‭]><!--> <‬html dir‭="‬rtl‭"> <!--<![‬endif‭]-->‬
 
-‭<‬link href‭="‬assets/style.css‭" ‬rel‭="‬stylesheet‭" />‬
+‭    <‬head‭>‬
+		‭<‬meta charset‭="‬UTF-8‭" />‬
+‭        <‬meta http-equiv‭="‬X-UA-Compatible‭" ‬content‭="‬IE=edge,chrome=1‭"> ‬
+‭        <‬title>CSS-Only Responsive Layout with Smooth Transitions‭</‬title‭>‬
+‭        <‬meta name‭="‬viewport‭" ‬content‭="‬width=device-width‭, ‬initial-scale=1.0‭"> ‬
+‭        <‬meta name‭="‬description‭" ‬content‭="‬CSS-only Responsive Layout with Smooth Transitions‭" />‬
+‭        <‬meta name‭="‬keywords‭" ‬content‭="‬css3‭, ‬transitions‭, ‬animations‭, ‬css-only‭, ‬navigation‭, ‬smooth scrolling‭, ‬full width‭, ‬full height‭, ‬window width‭, ‬window height‭" />‬
+‭        <‬link rel‭="‬stylesheet‭" ‬type‭="‬text/css‭" ‬href‭="‬css/demo.css‭" />‬
+‭        <‬link rel‭="‬stylesheet‭" ‬type‭="‬text/css‭" ‬href‭="‬css/style.css‭" />‬
+‭    </‬head‭>‬
+‭    <‬body‭>‬
+‭        <‬div class‭="‬container‭">‬
+					
+			‭<‬div class‭="‬st-container‭">‬
+			
+				‭<‬input type‭="‬radio‭" ‬name‭="‬radio-set‭" ‬checked‭="‬checked‭" ‬id‭="‬st-control-1‭"/>‬
+				‭<‬a href‭="#‬st-panel-1‭">‬ظ(ظ.ظ‮۴‬‭ ‬ظ'عàعÑ‭</‬a‭>‬
+				‭<‬input type‭="‬radio‭" ‬name‭="‬radio-set‭" ‬id‭="‬st-control-2‭"/>‬
+				‭<‬a href‭="#‬st-panel-2‭">‬ظ(ظ.ظ‮۴‬‭ ‬ظ/عàعÖ‭</‬a‭>‬
+				‭<‬input type‭="‬radio‭" ‬name‭="‬radio-set‭" ‬id‭="‬st-control-3‭"/>‬
+				‭<‬a href‭="#‬st-panel-3‭">‬ظ(ظ.ظ‮۴‬‭ ‬ظ‮۳‬عàعÖ‭</‬a‭>‬
+				‭<‬input type‭="‬radio‭" ‬name‭="‬radio-set‭" ‬id‭="‬st-control-4‭"/>‬
+				‭<‬a href‭="#‬st-panel-4‭">‬ظ(ظ.ظ‮۴‬‭ ‬غÜعáظ'ظ‮۱‬عÖ‭</‬a‭>‬
+				‭<‬input type‭="‬radio‭" ‬name‭="‬radio-set‭" ‬id‭="‬st-control-5‭"/>‬
+				‭<‬a href‭="#‬st-panel-5‭">‬ظ(ظ.ظ‮۴‬‭ ‬ع>عÜظ،عÖ‭</‬a‭>‬
+				
+				‭<‬div class‭="‬st-scroll‭">‬
+				
+					‭<!-- ‬Placeholder text from http‭://‬hipsteripsum.me‭/ -->‬
+					
+					‭<‬section class‭="‬st-panel‭" ‬id‭="‬st-panel-1‭">‬
+						‭<‬div class‭="‬st-deco‭" ‬data-icon‭="‬H‭"></‬div‭>‬
+						‭<‬h2‭>‬ظ(ظ.ظ‮۴‬‭ ‬ظ'عàعÑ‭</‬h2‭>‬
+						‭<‬p‭>‬ظ‮([«‬ظ‮۴‬ظ*ظ‮۱‬‭ ‬ظ'عÜظ‮۳‬ظ'عÜقÄ‮«‬عáظ'ظ‮«‬‭ ‬عáعÜغ‮/‬ظ'عÖ‮[«‬‭ ‬غ‮)‬عá‭ ‬ظ/ظ‮۱‬‭ ‬ع>ظ‮'[«‬ظ'عÜ‭ ‬ظ‮۹‬عÖظ‮۱‬‭ ‬ظ(عá‭ ‬غ‮/‬ظ‮۰‬ظ‮۴‬ظ*عá‭ ‬عÖ‮[«‬قÄ‮«‬عÜغ‮/‬ظ‮۱‬عÜظ/ظ‮«‬‭ ‬ظ/ظ‮۱‬‭ ‬عÖ‮[«‬قÄ‮«[«‬ظ'ظ(عÜظ‮/‬‭ ‬غÜعÇظ/ظ‮۱‬‭ ‬ظ‮۹‬ظ'ظ‮۱[«‬ظ‮*[«‬‭ ‬عà‭ ‬عÜظ'ع>ظ‮'[«‬ظ/ظ'ظ‮۱‬‭ ‬ظ‮۲[«‬ظ‮۳‬ظ*عáقÄ‮«‬ظ'عÜظ‮/‬‭. ‬عàعÇظ‮*[«‬‭ ‬عÖ‮[«‬قÄ‮«‬ظ‮([«‬عÜعÜظ‮/‬‭ ‬ظ"عÜغÜعá‭ ‬غ‮/‬ظ‮۰‬ظ'ظ‮۴‬ظ*عáقÄ‮«‬ظ'عÜظ‮/‬‭ ‬ظ'ظ‮۲‬‭ ‬ظ/ظ‮۳‬ظ*ظ‮۴‬ظ'عÜ‭ ‬ظ(ظ‮۱‬عàظ‮/‬‭ ‬ظ‮([«‬قÄ‮«‬ظ"عÜغ‮)‬عá‭ ‬عÇظ/ظ‮۱‬ظ‮۴‬‭ ‬ظ‮۱‬ظ‮'‬‭ ‬ظ(ظ/ظ'عÜعÜظ‮/‬‭ ‬‮[«‬ظ‮'‬‭ ‬عÑظ‮۰‬ظ*ظ‮۴‬‭ ‬ظ‮۱‬ظ‮'‬‭ ‬ظ(ظ(ظ‮۱‬عÜظ/ظ‮«‬‭ ‬عáعÖظ'عÜ‭ ‬ظ‮۲‬عÜظ‮/‬غ‮/[«‬قÄ‮«‬ظ‮۴‬ظ'عÜ‭ ‬ظ(عàظ/عáظ‮«‬‭ ‬ظ‮۴‬غ‮/‬ع ظ*قÄ‮«‬ظ‮۲‬ظ/عá‭ ‬ظ.عàظ'عáعÜظ‮/‬‭ ‬ظ‮۴‬ظ‮/‬‭. ‬عà‭ ‬غÜعÜ‮[«‬عÜ‭ ‬ظ'عÜظ‮۳‬ظ'عÜ‮[«‬‭ ‬ع ظ‮۱[«‬ظ‮(‬‭ ‬ظ.عàظ‮۱‬ظ/عá‭ ‬ظ'ظ‮۲‬‭ ‬ظ'عÖ‮[«‬ظ/ظ‮«‬‭ ‬ظ‮۱‬عÇظ‮۵‬ظ'عÜ‭ ‬ظ(عá‭ ‬ظ‮۳‬عà‮[«‬‭ ‬ظ(ظ'ظ‮۲‬عàظ'عÜ‭ ‬عÖظ‮۱‬غ‮/‬‭ ‬عÖ‮[«‬قÄ‮«‬ظ‮۱‬عàظ‮/‬‭.</‬p‭>‬
+					‭</‬section‭>‬
+					
+					‭<‬section class‭="‬st-panel st-color‭" ‬id‭="‬st-panel-2‭">‬
+						‭<‬div class‭="‬st-deco‭" ‬data-icon‭="‬2‭"></‬div‭>‬
+						‭<‬h2‭>‬ظ(ظ.ظ‮۴‬‭ ‬ظ/عàعÖ‭</‬h2‭>‬
+						‭<‬p‭>‬ظ"ظ‮۳‬ظ'عÜظ*ظ‮۱[«‬عÜ‭ ‬ظ‮۱‬ظ'عá‭ ‬ظ(ظ‮۱‬ظ‮'[«‬‭ ‬ظ'ظ‮۲‬‭ ‬ظ‮([«‬عÜ‭ ‬ظ(ظ‮۱‬ظ/عÜ‭ ‬ظ'ع ظ*ظ.ظ'ظ‮۱‬ظ'ظ‮*‬‭ ‬ظ.عàظ/ظ‮۳‬ظ*ظ‮'[«[«‬‭ ‬ظ'ظ‮۳‬ظ‮*‬‭.</‬p‭>‬
+					‭</‬section‭>‬
+					
+					‭<‬section class‭="‬st-panel‭" ‬id‭="‬st-panel-3‭">‬
+						‭<‬div class‭="‬st-deco‭" ‬data-icon‭="‬B‭"></‬div‭>‬
+						‭<‬h2‭>‬ظ(ظ.ظ‮۴‬‭ ‬ظ‮۳‬عàعÖ‭</‬h2‭>‬
+						‭<‬p‭>‬ظ*ظ‮۵‬عàظ‮۱‬‭ ‬غ‮)‬عÜ‭ ‬ظ‮'‬غ‮/‬ظ‮۱‬‭ ‬عÇظ‮۱‬ظ'ظ‮۱‬‭ ‬ظ(عàظ‮/‬‭ ‬عáظ‮۱‬‭ ‬غ‮)‬ظ‮۳‬‭ ‬ظ(عá‭ ‬ظ'عÜظ/ظ'ظ‮۲‬عáعî‭ ‬ظ/ظ'عÜظ‮۴‬‭ ‬ظ.عàظ‮/‬‭ ‬ظ-ظ‮۱‬ع‮ ‬‭ ‬ظ(ظ‮۲‬عÜظ‮/‬‭ ‬غÜعá‭ ‬ظ‮۳‬غ‮)‬عàظ‮*[«‬‭ ‬ظ(ظ‮۱‬‭ ‬ظ/عÜ‮[«‬ظ‮'‬‭ ‬ظ-ظ‮'‬غ‮)‬عÖ‭ ‬عÖ‮[«‬قÄ‮«‬ظ‮۴‬ظ‮/‬‭.</‬p‭>‬
+					‭</‬section‭>‬
+					
+					‭<‬section class‭="‬st-panel st-color‭" ‬id‭="‬st-panel-4‭">‬
+						‭<‬div class‭="‬st-deco‭" ‬data-icon‭="‬x‭"></‬div‭>‬
+						‭<‬h2‭>‬ظ(ظ.ظ‮۴‬‭ ‬غÜعáظ'ظ‮۱‬عÖ‭</‬h2‭>‬
+						‭<‬p‭>‬ظ/ظ‮۱‬عÜغ‮/‬ظ‮«‬‭ ‬ظ(عáظ*ظ‮۱[«‬عÜ‭ ‬ظ/ظ‮۱‬عÖظ'عÜ‭ ‬ظ.ظ‮۴‬عÖ‭ ‬ظ'ظ‮۳‬ظ‮*‬‭.</‬p‭>‬
+					‭</‬section‭>‬
+					
+					‭<‬section class‭="‬st-panel‭" ‬id‭="‬st-panel-5‭">‬
+						‭<‬div class‭="‬st-deco‭" ‬data-icon‭="‬أá‭"></‬div‭>‬
+						‭<‬h2‭>‬ظ(ظ.ظ‮۴‬‭ ‬ع>عÜظ،عÖ‭</‬h2‭>‬
+						‭<‬p‭>‬ظ‮'‬غ‮/‬ظ‮۱‬‭ ‬ظ"ظ/عÖ‭ ‬عáظ‮'‬‭ ‬ظ/ظ‮۱‬‭ ‬غÜظ‮۴‬عÖ‭ ‬غ‮)‬ظ‮۳‬ظ'عÜ‮[«‬‭ ‬غ‮)‬عá‭ ‬عàظ'عÇظ‮۹‬ظ‮'‬‭ ‬ظ(ظ‮۱‬ظ‮'[«‬ظ‮۴‬ظ'عÜ‭ ‬عÖعáعÖعÜظ/ظ‮«‬‭ ‬ظ*ظ‮۵‬عà‮[«‬ظ‮۱‬‭ ‬ظ/عàظ‮۳‬ظ‮*‬‭ ‬ظ/ظ'ظ‮۴‬ظ*عÜ‮[«‬‭ ‬ظ‮'[«‬‭ ‬ظ'ظ‮۲‬‭ ‬ظ.عàظ‮/‬‭ ‬ظ(ظ‮([«‬عÜعÜظ/ظ‮«‬‭ ‬ظ.عàظ/ظ‮۴‬ظ'عÜ‭ ‬ظ‮۱‬ظ‮'‬‭ ‬ظ/عàظ‮۳‬ظ‮*‬‭ ‬ظ.عàظ'عáعÜظ‮/‬‭ ‬ظ/ظ'ظ‮۴‬ظ‮*‬‭.</‬p‭>‬
+					‭</‬section‭>‬
 
-‭</‬head‭>‬
-‭<‬body‭>‬
-‭<‬div class‭="‬logo‭">‬
-‭</‬div‭>‬
-‭<‬nav‭>‬
-	‭<‬ul‭>‬
-		‭<‬li‭><‬a href‭="‬https‭://‬mrcode.ir‭">‬عÖظ‮۳‬ظ*ظ‮۱‬غ‮)‬ظ‮/‬‭</‬a‭></‬li‭>‬
-		‭<‬li‭><‬a href‭="#">‬ظ"عÖعàظ‮۲‬ظ‮۴‬‭ ‬عáظ‮'‬‭</‬a‭>‬
-			‭<‬ul‭>‬
-				‭<‬li‭><‬a href‭="‬https‭://‬mrcode.ir/tag‭/‬ظ"عÖعàظ‮۲‬ظ‮۴‬‭-‬عáظ‮'[«‬‭-‬عàظ‮۱‬ظ/ع>ظ‮۱‬ظ‮۳‬‭">‬عàظ‮۱‬ظ/ع>ظ‮۱‬ظ‮۳‬‭</‬a‭></‬li‭>‬
-				‭<‬li‭><‬a href‭="‬https‭://‬mrcode.ir/tag‭/‬ظ"عÖعàظ‮۲‬ظ‮۴‬‭-‬عáظ‮'[«‬‭-‬ظ،عàعÖعÑظ‮'‬‭">‬ظ،عàعÖعÑظ‮'‬‭</‬a‭></‬li‭>‬
-				‭<‬li‭><‬a href‭="#">‬عÖظ*ع ظ‮۱‬عÇعá‭</‬a‭>‬
-					‭<‬ul‭>‬
-						‭<‬li‭><‬a href‭="‬https‭://‬mrcode.ir/tag‭/‬ظ"عÖعàظ‮۲‬ظ‮۴‬‭-‬html‭">‬HTML‭</‬a‭></‬li‭>‬
-						‭<‬li‭><‬a href‭="‬https‭://‬mrcode.ir/tag‭/‬ظ"عÖعàظ‮۲‬ظ‮۴‬‭-‬css‭">‬CSS‭</‬a‭></‬li‭>‬
-					‭</‬ul‭>‬
-				‭</‬li‭>‬
-			‭</‬ul‭>‬
-		‭</‬li‭>‬
-		‭<‬li‭><‬a href‭="‬https‭://‬market.mrcode.ir‭">‬ظ/ظ'عÜعÑعàظ‮/‬‭</‬a‭>‬
-			‭<‬ul‭>‬
-				‭<‬li‭><‬a href‭="‬https‭://‬market.mrcode.ir/category‭/‬عàظ‮۱‬ظ/ع>ظ‮۱‬ظ‮۳‬‭">‬عÇظ'عÑظ‮(‬‭ ‬عàظ‮۱‬ظ/ع>ظ‮۱‬ظ‮۳‬‭</‬a‭></‬li‭>‬
-				‭<‬li‭><‬a href‭="‬https‭://‬market.mrcode.ir/category‭/‬ظ،عàعÖعÑظ‮'‬‭">‬عÇظ'عÑظ‮(‬‭ ‬ظ،عàعÖعÑظ‮'‬‭</‬a‭></‬li‭>‬
-			‭</‬ul‭>‬
-		‭</‬li‭>‬
-		‭<‬li‭><‬a href‭="‬https‭://‬mrcode.ir‭/‬ظ*عÖظ'ظ‮۳‬‭-‬ظ(ظ‮'‬‭-‬عÖظ‮'‬‭">‬ظ*عÖظ'ظ‮۳‬‭ ‬ظ(ظ‮'‬‭ ‬عÖظ‮'‬‭</‬a‭></‬li‭>‬
-	‭</‬ul‭>‬
-‭</‬nav‭>‬
-
-‭</‬body‭>‬
+				‭</‬div‭><!-- // ‬st-scroll‭ -->‬
+				
+			‭</‬div‭><!-- // ‬st-container‭ -->‬
+			
+‭        </‬div‭>‬
+	‭</‬body‭>‬
 ‭</‬html‭>‬
