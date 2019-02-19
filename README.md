@@ -1,6 +1,10 @@
 <nav>
 	<ul>
-		<li><a href="https://github.com/uvsq21801511/langage_Kotlin/blob/master/Bases%20du%20langages%20Kotlin"> Bases du langages Kotlin</a></li>
+		<li><a href="#"> Bases du langages Kotlin</a></li>
+			<ul>
+				<li><a href="#">About language Kotlin</a></li>
+				<li><a href="#">History</a></li>
+			</ul>
 		<li><a href="#">Principales bibliothèques standards</a></li>
 		<li><a href="#">Principales bibliothèques tierces</a></li>
 		<li><a href="#">Putils de développement</a></li>
