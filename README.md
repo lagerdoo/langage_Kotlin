@@ -1,9 +1,10 @@
 <nav>
 	<ul>
-		<li><a href="#">## About language Kotlin</a></li>
-		<li><a href="#">آموزش ها</a></li>
-		<li><a href="#">دانلود</a></li>
-		<li><a href="#">تماس با ما</a></li>
+		<li><a href="#">## bases du langages</a></li>
+		<li><a href="#">Principales bibliothèques standards</a></li>
+		<li><a href="#">Principales bibliothèques tierces</a></li>
+		<li><a href="#">Putils de développement</a></li>
+		<li><a href="#">Ressources d'apprentissage</a></li>
 	</ul>
 </nav>
 ## About language Kotlin
