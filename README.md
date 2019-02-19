@@ -1,6 +1,6 @@
 <nav>
 	<ul>
-		<li><a href="#"> Bases du langages Kotlin</a></li>
+		<li> Bases du langages Kotlin</li>
 			<ul>
 				<li><a href="#">About language Kotlin</a></li>
 				<li><a href="#">History</a></li>
