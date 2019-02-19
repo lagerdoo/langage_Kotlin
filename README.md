@@ -1,5 +1,5 @@
 
-<link href="https://github.com/uvsq21801511/langage_Kotlin/blob/master/style.css" rel="stylesheet" />
+<link href="langage_Kotlin/assets/css/style.scss" rel="stylesheet" />
 <nav>
 	<ul>
 		<li> Bases du langages Kotlin</li>
