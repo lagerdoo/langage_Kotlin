@@ -1,3 +1,11 @@
+
+nav ul ul {
+	display: none;
+}
+ 
+nav ul li:hover > ul {
+	display: block;
+}
 <nav>
 	<ul>
 		<li> Bases du langages Kotlin</li>
