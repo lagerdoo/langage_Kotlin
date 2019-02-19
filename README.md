@@ -6,9 +6,8 @@ Kotlin is officially supported by Google for mobile development on Android.[3] S
 
 Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+## History
+
 In July 2011, JetBrains unveiled Project Kotlin, a new language for the JVM, which had been under development for a year.[5] JetBrains lead Dmitry Jemerov said that most languages did not have the features they were looking for, with the exception of Scala. However, he cited the slow compilation time of Scala as a deficiency.[5] One of the stated goals of Kotlin is to compile as quickly as Java. In February 2012, JetBrains open sourced the project under the Apache 2 license.[6]
 
 The name comes from Kotlin Island, near St. Petersburg. Andrey Breslav mentioned that the team decided to name it after an island just like Java was named after the Indonesian island of Java[7] (though the programming language Java was perhaps named after the coffee[8]).
