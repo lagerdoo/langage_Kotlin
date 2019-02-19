@@ -1,19 +1,12 @@
 <nav>
 	<ul>
-		<li><a href="#">## bases du langages</a></li>
+		<li><a href="https://github.com/uvsq21801511/langage_Kotlin/blob/master/Bases%20du%20langages%20Kotlin"> Bases du langages Kotlin</a></li>
 		<li><a href="#">Principales bibliothèques standards</a></li>
 		<li><a href="#">Principales bibliothèques tierces</a></li>
 		<li><a href="#">Putils de développement</a></li>
 		<li><a href="#">Ressources d'apprentissage</a></li>
 	</ul>
 </nav>
-## About language Kotlin
-
-Kotlin is a cross-platform, statically typed, general-purpose programming language with type inferenceJava, and the JVM version of its standard library depends on the Java Class Library,[2] but type inference allows its syntax to be more concise. Kotlin mainly targets the JVM, but also compiles to JavaScript or native code (via LLVM). Kotlin is sponsored by JetBrains and Google through the Kotlin Foundation.
-
-Kotlin is officially supported by Google for mobile development on Android.[3] Since the release of Android Studio 3.0 in October 2017, Kotlin is included as an alternative to the standard Java compiler. The Android Kotlin compiler lets the user choose between targeting Java 6 or Java 8 compatible bytecode.
-
-Syntax highlighted code block
 
 ## History
 
