@@ -1,6 +1,25 @@
 <html>
 <head>	
-<link rel="stylesheet" type="text/css" href="langage_Kotlin/assets/css/style.scss">	
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+}
+a {
+    width: 60px;
+    background-color: #97bf21;
+    float:left;
+    font-size:20px;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 4px;
+    text-align: center;
+}
+</style>	
 </head>
 <body>
 <nav>
