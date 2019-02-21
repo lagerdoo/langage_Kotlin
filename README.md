@@ -6,8 +6,8 @@
 	<ul>
 		<li> Bases du langages Kotlin</li>
 			<ul>
-				<li><a href="langage_Kotlin/History" >About language Kotlin</a></li>
-				<li><a href="#">History</a></li>
+				<li><a href="#" >About language Kotlin</a></li>
+				<li><a href="langage_Kotlin/History">History</a></li>
 			</ul>
 		<li><a href="#">Principales bibliothèques standards</a></li>
 		<li><a href="#">Principales bibliothèques tierces</a></li>
