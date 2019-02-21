@@ -1,6 +1,4 @@
-
-
-		
+	<link rel="stylesheet" type="text/css" href="langage_Kotlin/assets/css/style.scss">	
 
 <nav>
 	<ul>
