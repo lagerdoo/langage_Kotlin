@@ -1,4 +1,6 @@
-@import url‭('‬normalize.css‭');‬
+@import "{{ site.theme }}";
+
+
 
 @font-face‭ {‬
 	font-family‭:'‬RaphaelIcons‭';‬
