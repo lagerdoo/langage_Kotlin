@@ -6,9 +6,6 @@ ul {
     margin: 0;
     padding: 0;
 }
-li {
-    display: inline;
-}
 a {
     width: 60px;
     background-color: #97bf21;
