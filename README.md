@@ -1,5 +1,8 @@
-	<link rel="stylesheet" type="text/css" href="langage_Kotlin/assets/css/style.scss">	
-
+<html>
+<head>	
+<link rel="stylesheet" type="text/css" href="langage_Kotlin/assets/css/style.scss">	
+</head>
+<body>
 <nav>
 	<ul>
 		<li> Bases du langages Kotlin</li>
@@ -15,6 +18,6 @@
 		<li><a href="#">Putils de développement</a></li>
 		<li><a href="#">Ressources d'apprentissage</a></li>
 	</ul>
-</nav>
-
-
+</nav> 
+</body>
+</html>
