@@ -1,0 +1,49 @@
+Kotlin is a general purpose, open source, statically typed “pragmatic” programming language for the JVM and Android that combines 
+object-oriented and functional programming features. It is focused on interoperability, safety, clarity, and tooling support. 
+Versions of Kotlin for JavaScript (ECMAScript 5.1) and native code (using LLVM) are in the works.
+Kotlin originated at JetBrains, the company behind IntelliJ IDEA, in 2010, and has been open source since 2012.
+The Kotlin team currently has more than 20 full-time members from JetBrains, and the Kotlin project on GitHub has about 100 contributors.
+JetBrains uses Kotlin in many of its products including its flagship IntelliJ IDEA.
+At first glance, Kotlin looks like a streamlined version of Java.
+Consider the screenshot above, where I have converted a Java code sample (at left) to Kotlin automatically.
+Notice that the mindless repetition inherent in instantiating Java variables has gone away.
+In Kotlin, everything is an object in the sense that we can call member functions and properties on any variable. 
+ Some of the types can have a special internal representation - for example, numbers, characters and booleans
+ can be represented as primitive values at runtime - but to the user they look like ordinary classes.
+  In this section we describe the basic types used in Kotlin: numbers, characters, booleans, arrays, and strings.
+  Numbers: Kotlin handles numbers in a way close to Java, but not exactly the same. 
+  For example, there are no implicit widening conversions for numbers, and literals are slightly different in some cases.
+  
+  Type	Bit width
+  Double	64
+  Float	32
+  Long	64
+  Int	32
+  Short	16
+  Byte	8
+  
+  Characters :
+  Characters are represented by the type Char. They can not be treated directly as numbers
+  Character literals go in single quotes: '1'. Special characters can be escaped using a backslash
+  The following escape sequences are supported: \t, \b, \n, \r, \', \", \\ and \$. 
+  To encode any other character, use the Unicode escape sequence syntax: '\uFF00'.
+  
+  Booleans :
+  The type Boolean represents booleans, and has two values: true and false.
+  Booleans are boxed if a nullable reference is needed.
+  Built-in operations on booleans include :
+  || – lazy disjunction
+  && – lazy conjunction
+  ! - negation
+  
+  Arrays :
+  Arrays in Kotlin are represented by the Array class, that has get and set functions (that turn into [] by 
+  operator overloading conventions), and size property, along with a few other useful member functions:
+  To create an array, we can use a library function arrayOf() and pass the item values to it, so that 
+  arrayOf(1, 2, 3) creates an array [1, 2, 3].
+  Alternatively, the arrayOfNulls() library function can be used to create an array of a given size filled with null elements.
+  
+  Strings :
+  Strings are represented by the type String. Strings are immutable. Elements of a string are characters that 
+  can be accessed by the indexing operation: s[i].
+  
