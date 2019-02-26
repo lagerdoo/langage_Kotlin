@@ -1,4 +1,4 @@
-@import "{{ site.theme }}";
+@import "{{ site.theme 
 .lt-ie9 body {
 	overflow: auto; /* ie8 and below */
 }
@@ -423,3 +423,4 @@
 		transform: rotate(-45deg) translateY(15%);
 	}
 }
+}}";
