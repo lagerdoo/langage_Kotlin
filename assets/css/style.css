@@ -101,7 +101,7 @@
 
 .st-scroll,
 .st-panel {
-    overflow-y:scroll;
+ 
 
 	position: relative;
 	width: 100%;
@@ -125,7 +125,7 @@
 .st-panel{
  
 	background: #fff;
-	overflow: auto;
+	
 } 
 
 #st-control-1:checked ~ .st-scroll {
@@ -168,7 +168,7 @@
 /* Content elements */
 
 .st-deco{
-    overflow-y:scroll;
+    
 
 	width: 200px;
 	height: 200px;
