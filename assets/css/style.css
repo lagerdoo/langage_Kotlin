@@ -287,7 +287,7 @@
 }
 
 .st-panel p {
-	overflow-y: auto;
+	overflow-y: scroll;
 	position: absolute;
 	text-align: center;
 	font-size: 16px;
@@ -295,7 +295,7 @@
 	color: #8b8b8b;
 	z-index: 2;
 	padding: 0;
-	width: 50%;
+	width: 80%;
 	right: 25%;
 	top: 50%;
 	margin: 10px 0 0 0;
