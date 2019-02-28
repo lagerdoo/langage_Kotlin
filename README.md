@@ -1,4 +1,4 @@
 ---
 title: Kotlin
-layout: default
+layout: default.html
 ---
