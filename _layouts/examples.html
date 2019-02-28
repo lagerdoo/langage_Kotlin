@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+	<head>
+        <title>About Kotlin</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <!-- Main CSS --> 
+        <link rel="stylesheet" href="/css/style.css">
+
+        <!-- Font Awesome -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+  
+    <body>
+
+        <!-- Main navigation -->
+        <div id="sidebar">
+                      
+            <div class="navbar-expand-md navbar-dark"> 
+            
+                <header class="d-none d-md-block">
+                    <h1><span></span>Kotlin</h1>
+                </header>
+                
+                
+                <!-- Mobile menu toggle and header -->
+                <div class="mobile-header-controls">
+                    <a class="navbar-brand d-md-none d-lg-none d-xl-none" href="#"><span>my</span>website</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#SidebarContent" aria-controls="SidebarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+         
+                <div id="SidebarContent" class="collapse flex-column navbar-collapse">
+ 
+                        
+                    
+                    <!-- Main navigation items -->
+                    <nav class="navbar navbar-dark">
+                        <div id="mainNavbar">
+                            <ul class="flex-column mr-auto">
+                                <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                </li>
+
+                                <li class="nav-item active dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#MenuDropdown" data-toggle="collapse" aria-controls="MenuDropdown" aria-expanded="false">Examples &amp; Pages</a>
+                                            <ul id="MenuDropdown" class="sub-navbar collapse flex-column">
+                                                <li class="nav-item"><a class="nav-link" href="examples.html">Basics of Kotlin's languages</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="three-column.html">Main standard libraries</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="one-column.html">Major third-party libraries</a></li>
+                                                <li class="nav-item"><a class="nav-link"  href="text.html">Development tools</a></li>
+                                                <li class="nav-item"><a class="nav-link"  href="index-right.html">Learning resources</a></li>
+                                            </ul>
+                                </li>
+
+
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Services</a>
+                                </li>
+
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Products</a>
+                                </li>
+
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>   
+                    </nav>
+                
+                
+                
+                    <!-- Sidebar search form -->
+                    <form class="form-inline sidebar-search-form my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" size="10"  placeholder="Search" aria-label="Search">
+                        <button class="btn my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+          
+                    <!-- Social icons -->
+                    <p class="sidebar-social-icons social-icons">
+                        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                        <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
+                        <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+                    </p>
+                
+                </div>
+            </div> 
+        </div>
+    
+        
+        <div id="content">
+            <div id="content-wrapper">
+                
+                <!-- Jumbtron / Slider -->
+                <div class="jumbotron-wrap">
+                    <div class="container-fluid">
+                        <div class="jumbotron jumbotron-narrow static-slider">
+                            <h1 class="text-center">Basics of Kotlin's</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main content area -->
+                <main class="container-fluid">
+                    <div class="row">
+
+                        <!-- Main content -->
+                        <div class="col-sm-8">
+                            <article>
+                               
+
+                                <h4>History</h4>
+                        
+
+
+                                <p>In July 2011, JetBrains unveiled Project Kotlin, a new language for the JVM, which had been under development for a year.[5] JetBrains lead Dmitry Jemerov said that most languages did not have the features they were looking for, with the exception of Scala. However, he cited the slow compilation time of Scala as a deficiency.[5] One of the stated goals of Kotlin is to compile as quickly as Java. In February 2012, JetBrains open sourced the project under the Apache 2 license.[6]
+
+The name comes from Kotlin Island, near St. Petersburg. Andrey Breslav mentioned that the team decided to name it after an island just like Java was named after the Indonesian island of Java[7] (though the programming language Java was perhaps named after the coffee[8]).
+
+JetBrains hopes that the new language will drive IntelliJ IDEA sales.[9]
+
+Kotlin v1.0 was released on February 15, 2016.[10] This is considered to be the first officially stable release and JetBrains has committed to long-term backwards compatibility starting with this version.
+
+At Google I/O 2017, Google announced first-class support for Kotlin on Android.[3]
+
+Kotlin v1.2 was released on November 28, 2017.[11] Sharing code between JVM and Javascript platforms feature was newly added to this release.
+
+Kotlin v1.3 was released on October 29, 2018, bringing coroutines for asynchronous programming.</p>
+
+                                <h4>Design</h4>
+                                
+                                <p>Development lead Andrey Breslav has said that Kotlin is designed to be an industrial-strength object-oriented language, and a "better language" than Java, but still be fully interoperable with Java code, allowing companies to make a gradual migration from Java to Kotlin.[12]
+
+Semicolons are optional as a statement terminator; in most cases a newline is sufficient for the compiler to deduce that the statement has ended.[13]
+
+Kotlin variable declarations and parameter lists have the data type come after the variable name (and with a colon separator), similar to Pascal.
+
+Variables in Kotlin can be immutable, declared with the val keyword, or mutable, declared with the var keyword.[14]
+
+Class members are public by default, and classes themselves are final by default, meaning that creating a derived class is disabled unless the base class is declared with the open keyword.
+
+In addition to the classes and methods (called member functions in Kotlin) of object-oriented programming, Kotlin also supports procedural programming with the use of functions.[15]
+
+Kotlin functions (and constructors) support default arguments, variable-length argument lists, named arguments and overloading by unique signature. Class member functions are virtual, i.e. dispatched based on the runtime type of the object they are called on.</p>
+                                
+                            </article>
+                        </div>
+                    </div> 
+                    <p class="text-center"><a href="#">Back to top</a></p>
+                </main>
+
+
+                <!-- Footer -->
+               
+            </div>
+        </div>
+
+        <!-- Bootcamp JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+</html>
