@@ -22,7 +22,7 @@
             <div class="navbar-expand-md navbar-dark"> 
             
                 <header class="d-none d-md-block">
-                    <h1><span></span>Kotlin</h1>
+                   <img src="pCfEzr6L.png" >
                 </header>
                 
                 
@@ -47,7 +47,7 @@
                                 </li>
 
                                 <li class="nav-item active dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#MenuDropdown" data-toggle="collapse" aria-controls="MenuDropdown" aria-expanded="false">Examples &amp; Pages</a>
+                                            <a class="nav-link dropdown-toggle" href="#MenuDropdown" data-toggle="collapse" aria-controls="MenuDropdown" aria-expanded="false">About &amp; Kotlin</a>
                                             <ul id="MenuDropdown" class="sub-navbar collapse flex-column">
                                                 <li class="nav-item"><a class="nav-link" href="Basics.html">Basics of Kotlin's languages</a></li>
                                                 <li class="nav-item"><a class="nav-link" href="Main_standard.html">Main standard libraries</a></li>
@@ -113,42 +113,59 @@
                         <!-- Main content -->
                         <div class="col-sm-8">
                             <article>
-                               
-
-                                <h4>History</h4>
-                        
-
-
-                                <p>In July 2011, JetBrains unveiled Project Kotlin, a new language for the JVM, which had been under development for a year.[5] JetBrains lead Dmitry Jemerov said that most languages did not have the features they were looking for, with the exception of Scala. However, he cited the slow compilation time of Scala as a deficiency.[5] One of the stated goals of Kotlin is to compile as quickly as Java. In February 2012, JetBrains open sourced the project under the Apache 2 license.[6]
-
-The name comes from Kotlin Island, near St. Petersburg. Andrey Breslav mentioned that the team decided to name it after an island just like Java was named after the Indonesian island of Java[7] (though the programming language Java was perhaps named after the coffee[8]).
-
-JetBrains hopes that the new language will drive IntelliJ IDEA sales.[9]
-
-Kotlin v1.0 was released on February 15, 2016.[10] This is considered to be the first officially stable release and JetBrains has committed to long-term backwards compatibility starting with this version.
-
-At Google I/O 2017, Google announced first-class support for Kotlin on Android.[3]
-
-Kotlin v1.2 was released on November 28, 2017.[11] Sharing code between JVM and Javascript platforms feature was newly added to this release.
-
-Kotlin v1.3 was released on October 29, 2018, bringing coroutines for asynchronous programming.</p>
-
-                                <h4>Design</h4>
-                                
-                                <p>Development lead Andrey Breslav has said that Kotlin is designed to be an industrial-strength object-oriented language, and a "better language" than Java, but still be fully interoperable with Java code, allowing companies to make a gradual migration from Java to Kotlin.[12]
-
-Semicolons are optional as a statement terminator; in most cases a newline is sufficient for the compiler to deduce that the statement has ended.[13]
-
-Kotlin variable declarations and parameter lists have the data type come after the variable name (and with a colon separator), similar to Pascal.
-
-Variables in Kotlin can be immutable, declared with the val keyword, or mutable, declared with the var keyword.[14]
-
-Class members are public by default, and classes themselves are final by default, meaning that creating a derived class is disabled unless the base class is declared with the open keyword.
-
-In addition to the classes and methods (called member functions in Kotlin) of object-oriented programming, Kotlin also supports procedural programming with the use of functions.[15]
-
-Kotlin functions (and constructors) support default arguments, variable-length argument lists, named arguments and overloading by unique signature. Class member functions are virtual, i.e. dispatched based on the runtime type of the object they are called on.</p>
-                                
+                                <h4>Basic Types</h4>                         		 					
+                                <p>In Kotlin, everything is an object in the sense that we can call member functions and properties on any variable. Some of the types can have a special internal representation - for example, numbers, characters and booleans can be represented as primitive values at runtime - but to the user they look like ordinary classes. In this section we describe the basic types used in Kotlin: numbers, characters, booleans, arrays, and strings.
+                                </p>
+								<h4>Numbers</h4>
+                               <p>Kotlin handles numbers in a way close to Java, but not exactly the same. For example, there are no implicit widening conversions for numbers, and literals are slightly different in some cases.
+								Kotlin provides the following built-in types representing numbers (this is close to Java):</p>
+                                <table>
+  									<tr>
+							    		<th>Type</th>
+							    		<th>Bit width</th>
+							    	 </tr>
+							    	 <tr>
+							    		<th>Double</th>
+							    		<th>64</th>
+							    	 </tr>
+							    	 <tr>
+							    		<th>Float</th>
+							    		<th>32</th>
+							    	 </tr>
+							    	 <tr>
+							    		<th>Long</th>
+							    		<th>64</th>
+							    	 </tr>
+							    	 <tr>
+							    		<th>Int</th>
+							    		<th>32</th>
+							    	 </tr>
+							    	 <tr>
+							    		<th>Short</th>
+							    		<th>16</th>
+							    	 </tr>
+							    	 <tr>
+							    		<th>Byte</th>
+							    		<th>8</th>
+							    	 </tr>
+							    </table>
+							    <p>Note that characters are not numbers in Kotlin.</p>
+							    <h5>Literal Constants</h5>	 
+							    <p>There are the following kinds of literal constants for integral values:
+									<pre>	- Decimals: 123</pre>
+									<pre>	Longs are tagged by a capital L: 123L</pre>
+									<pre>	Hexadecimals: 0x0F</pre>
+									<pre>	Binaries: 0b00001011</pre>
+								NOTE: Octal literals are not supported.
+								Kotlin also supports a conventional notation for floating-point numbers:
+									<pre>	Doubles by default: 123.5, 123.5e10</pre>
+									<pre>	Floats are tagged by f or F: 123.5f</pre>
+								</p>
+								<h5>Underscores in numeric literals (since 1.1)</h5>
+								<p>	You can use underscores to make number constants more readable:</p>
+								<p>For more information</p>
+								<link href=""> 
+								<a href="https://kotlinlang.org/docs/reference/basic-types.html#underscores-in-numeric-literals-since-11">For more information!</a>
                             </article>
                         </div>
                     </div> 
