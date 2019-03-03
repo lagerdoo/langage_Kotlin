@@ -169,19 +169,32 @@ tr:nth-child(even) {
 							    <p>Note that characters are not numbers in Kotlin.</p>
 							    <h5>Literal Constants</h5>	 
 							    <p>There are the following kinds of literal constants for integral values:
-									<pre>	- Decimals: 123</pre>
-									<pre>	Longs are tagged by a capital L: 123L</pre>
-									<pre>	Hexadecimals: 0x0F</pre>
-									<pre>	Binaries: 0b00001011</pre>
+									<pre>	- Decimals: 123
+	- Longs are tagged by a capital L: 123L
+	- Hexadecimals: 0x0F
+	- Binaries: 0b00001011</pre>
 								NOTE: Octal literals are not supported.
 								Kotlin also supports a conventional notation for floating-point numbers:
-									<pre>	Doubles by default: 123.5, 123.5e10</pre>
-									<pre>	Floats are tagged by f or F: 123.5f</pre>
+									<pre>	- Doubles by default: 123.5, 123.5e10
+	- Floats are tagged by f or F: 123.5f</pre>		
 								</p>
 								<h5>Underscores in numeric literals (since 1.1)</h5>
 								<p>	You can use underscores to make number constants more readable:</p>
-								<p>For more information</p>
-								<link href=""> 
+								<pre>	val oneMillion = 1_000_000
+	val creditCardNumber = 1234_5678_9012_3456L
+	val socialSecurityNumber = 999_99_9999L
+	val hexBytes = 0xFF_EC_DE_5E
+	val bytes = 0b11010010_01101001_10010100_10010010</pre>
+	<h5>Representation</h5>
+
+<p>On the Java platform, numbers are physically stored as JVM primitive types, unless we need a nullable number reference (e.g. Int?) or generics are involved. In the latter cases numbers are boxed.
+
+Note that boxing of numbers does not necessarily preserve identity:</p>
+							<pre>	val a: Int = 10000
+	println(a === a) // Prints 'true'
+	val boxedA: Int? = a
+	val anotherBoxedA: Int? = a
+	println(boxedA === anotherBoxedA) // !!!Prints 'false'!!!</pre>
 								<a href="https://kotlinlang.org/docs/reference/basic-types.html#underscores-in-numeric-literals-since-11">For more information!</a>
                             </article>
                         </div>
