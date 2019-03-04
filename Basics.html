@@ -208,6 +208,28 @@ Note that boxing of numbers does not necessarily preserve identity:</p>
 	val a: Int? = 1 // A boxed Int (java.lang.Integer)
 	val b: Long? = a // implicit conversion yields a boxed Long (java.lang.Long)
 	print(b == a) // Surprise! This prints "false" as Long's equals() checks whether the other is Long as well</pre>
+<p>So equality would have been lost silently all over the place, not to mention identity.
+As a consequence, smaller types are NOT implicitly converted to bigger types. This means that we cannot assign a value of type Byte to an Int variable without an explicit conversion</p>
+<pre>	fun main() {
+	    val b: Byte = 1 // OK, literals are checked statically
+    	val i: Int = b // ERROR
+    	}	</pre>
+    	<p>We can use explicit conversions to widen numbers</p>
+    	<pre>	fun main() {
+	    val b: Byte = 1
+    	val i: Int = b.toInt() // OK: explicitly widened
+	    print(i)
+}	</pre>
+<p>Every number type supports the following conversions:</p>
+<pre>	-toByte(): Byte
+	-toShort(): Short
+	-toInt(): Int
+	-toLong(): Long
+	-toFloat(): Float
+	-toDouble(): Double
+	-toChar(): Char</pre>
+	<p>Absence of implicit conversions is rarely noticeable because the type is inferred from the context, and arithmetical operations are overloaded for appropriate conversions, for example</p>
+	<pre>	val l = 1L + 3 // Long + Int => Long</pre>
 <a href="https://kotlinlang.org/docs/reference/basic-types.html#underscores-in-numeric-literals-since-11">For more information!</a>
                             </article>
                         </div>
