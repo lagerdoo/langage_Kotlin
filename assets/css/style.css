@@ -471,10 +471,15 @@ kbd {
     font-size: 100%;
     font-weight: 700; }
 
+p{
+	color:#251F28;
+}
 pre {
+	background-color:#F5F1FA;
   display: block;
   font-size: 87.5%;
-  color: #212529; }
+  color: #803A9A; 
+  }
   pre code {
     font-size: inherit;
     color: inherit;
