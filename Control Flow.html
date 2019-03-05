@@ -184,7 +184,7 @@ If many cases should be handled in the same way, the branch conditions may be co
 	<h6>For Loops</h6>
 	<p>
 for loop iterates through anything that provides an iterator. This is equivalent to the foreach loop in languages like C#. The syntax is as follows:</p>
-<pre>for (item in collection) print(item)</pre>
+<pre>	for (item in collection) print(item)</pre>
 <p>The body can be a block.</p>
 <pre>	for (item: Int in ints) {
 	    // ...
@@ -204,9 +204,9 @@ for loop iterates through anything that provides an iterator. This is equivalent
 	<p>A for loop over a range or an array is compiled to an index-based loop that does not create an iterator object.
 
 If you want to iterate through an array or a list with an index, you can do it this way:</p>
-<pre>for (i in array.indices) {
-    println(array[i])
-}</pre>
+<pre>	for (i in array.indices) {
+	    println(array[i])
+	}</pre>
 <p>Alternatively, you can use the withIndex library function:</p>
 <pre>	for ((index, value) in array.withIndex()) {
 	    println("the element at $index is $value")
