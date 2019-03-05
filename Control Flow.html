@@ -140,6 +140,34 @@ tr:nth-child(even) {
  
 // As expression 
 val max = if (a > b) a else b</pre>
+<p>if branches can be blocks, and the last expression is the value of a block:</p>
+<pre>	val max = if (a > b) {
+	    print("Choose a")
+	    a
+	} else {
+	    print("Choose b")
+	    b
+}	</pre>
+<p>If you're using if as an expression rather than a statement (for example, returning its value or assigning it to a variable), the expression is required to have an else branch.</p>
+<h6>When Expression</h6>
+
+<p>when replaces the switch operator of C-like languages. In the simplest form it looks like this</p>
+<pre>	when (x) {
+	    1 -> print("x == 1")
+	    2 -> print("x == 2")
+	    else -> { // Note the block
+	    print("x is neither 1 nor 2")
+	    }
+}</pre>
+<p>when matches its argument against all branches sequentially until some branch condition is satisfied. when can be used either as an expression or as a statement. If it is used as an expression, the value of the satisfied branch becomes the value of the overall expression. If it is used as a statement, the values of individual branches are ignored. (Just like with if, each branch can be a block, and its value is the value of the last expression in the block.)
+
+The else branch is evaluated if none of the other branch conditions are satisfied. If when is used as an expression, the else branch is mandatory, unless the compiler can prove that all possible cases are covered with branch conditions (as, for example, with enum class entries and sealed class subtypes).
+
+If many cases should be handled in the same way, the branch conditions may be combined with a comma:</p>
+<pre>	when (x) {
+	    0, 1 -> print("x == 0 or x == 1")
+	    else -> print("otherwise")
+	}</pre>
                             </article>
                             
                         </div>
