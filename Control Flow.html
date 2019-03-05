@@ -168,6 +168,18 @@ If many cases should be handled in the same way, the branch conditions may be co
 	    0, 1 -> print("x == 0 or x == 1")
 	    else -> print("otherwise")
 	}</pre>
+	<p>We can use arbitrary expressions (not only constants) as branch conditions</p>
+	<pre>	when (x) {
+	    parseInt(s) -> print("s encodes x")
+	    else -> print("s does not encode x")
+	}</pre>
+	<p>We can also check a value for being in or !in a range or a collection:</p>
+	<pre>	when (x) {
+	    in 1..10 -> print("x is in the range")
+	    in validNumbers -> print("x is valid")
+	    !in 10..20 -> print("x is outside the range")
+	    else -> print("none of the above")
+	}</pre>	
                             </article>
                             
                         </div>
