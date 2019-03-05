@@ -125,6 +125,7 @@ tr:nth-child(even) {
                         <div class="col-sm-8">
                             <article>
                             <h6>Control Flow: if, when, for, while</h6>
+				    <h7>If</h7>
                             <p>In Kotlin, if is an expression, i.e. it returns a value. Therefore there is no ternary operator (condition ? then : else), because ordinary if works fine in this role.</p>
                             <pre> // Traditional usage 
   var max = a 
@@ -194,6 +195,32 @@ for loop iterates through anything that provides an iterator. This is equivalent
 	-has a member- or extension-function next(), and
 	-has a member- or extension-function hasNext() that returns Boolean.
 	All of these three functions need to be marked as operator.</pre>
+	<pre>	for (i in 1..3) {
+	    println(i)
+	}
+	for (i in 6 downTo 0 step 2) {
+	    println(i)
+	}</pre>
+	<p>A for loop over a range or an array is compiled to an index-based loop that does not create an iterator object.
+
+If you want to iterate through an array or a list with an index, you can do it this way:</p>
+<pre>for (i in array.indices) {
+    println(array[i])
+}</pre>
+<p>Alternatively, you can use the withIndex library function:</p>
+<pre>	for ((index, value) in array.withIndex()) {
+	    println("the element at $index is $value")
+	}</pre>
+	<H6>While Loops</h6>
+	<p>while and do..while work as usual</p>
+	<pre>	while (x > 0) {
+	    x--
+	}
+
+	do {
+	    val y = retrieveData()
+	} while (y != null) // y is visible here!</pre>
+	<a href="https://kotlinlang.org/docs/reference/control-flow.html">For more information!</a>
                             </article>
                             
                         </div>
