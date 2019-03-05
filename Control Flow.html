@@ -180,6 +180,20 @@ If many cases should be handled in the same way, the branch conditions may be co
 	    !in 10..20 -> print("x is outside the range")
 	    else -> print("none of the above")
 	}</pre>	
+	<h6>For Loops</h6>
+	<p>
+for loop iterates through anything that provides an iterator. This is equivalent to the foreach loop in languages like C#. The syntax is as follows:</p>
+<pre>for (item in collection) print(item)</pre>
+<p>The body can be a block.</p>
+<pre>	for (item: Int in ints) {
+	    // ...
+	}</pre>
+	<p>As mentioned before, for iterates through anything that provides an iterator, i.e.</p>
+<pre>
+	-has a member- or extension-function iterator(), whose return type
+	-has a member- or extension-function next(), and
+	-has a member- or extension-function hasNext() that returns Boolean.
+	All of these three functions need to be marked as operator.</pre>
                             </article>
                             
                         </div>
