@@ -190,7 +190,23 @@ tr:nth-child(even) {
 	/* This is a block comment
 	   on multiple lines. */</pre>
 				    
+				    <h6Using string templates</h6>
+				    <pre>	var a = 1
+	// simple name in template:
+	val s1 = "a is $a" 
 
+	a = 2
+	// arbitrary expression in template:
+	val s2 = "${s1.replace("is", "was")}, but now is $a"</pre>
+				    <h6>Using conditional expressions</h6>
+				    <pre>	fun maxOf(a: Int, b: Int): Int {
+	    if (a > b) {
+	        return a
+	    } else {
+	        return b
+ 	   }
+}</pre>
+				    
                                 <h4>Basic Types</h4>                         		 					
                                 <p>In Kotlin, everything is an object in the sense that we can call member functions and properties on any variable. Some of the types can have a special internal representation - for example, numbers, characters and booleans can be represented as primitive values at runtime - but to the user they look like ordinary classes. In this section we describe the basic types used in Kotlin: numbers, characters, booleans, arrays, and strings.
                                 </p>
