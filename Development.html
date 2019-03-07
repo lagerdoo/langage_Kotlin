@@ -136,6 +136,14 @@ Emacs has a Kotlin Mode in its Melpa package repository.</p>
                       		<p><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA<i class=""></i></a></p>
 				<p><a href="https://www.eclipse.org">Eclipse Neon<i class=""></i></a></p>
 			    <p><a href="https://kotlinlang.org/docs/tutorials/getting-started.html">Command Line Compiler<i class=""></i></a></p>
+				    <p><a href="https://kotlinlang.org/docs/reference/using-maven.html">Using Maven<i class=""></i></a></p>
+				     <p><a href="https://kotlinlang.org/docs/reference/using-ant.html">Using Ant<i class=""></i></a></p>
+				     <p><a href="https://kotlinlang.org/docs/reference/kotlin-osgi.html">Kotlin and OSGi<i class=""></i></a></p>
+				    <p>To enable Kotlin OSGi support you need to include kotlin-osgi-bundle instead of regular Kotlin libraries. It is recommended to remove kotlin-runtime, kotlin-stdlib and kotlin-reflect dependencies as kotlin-osgi-bundle already contains all of them. You also should pay attention in case when external Kotlin libraries are included. Most regular Kotlin dependencies are not OSGi-ready, so you shouldn't use them and should remove them from your project.</p>
+				    <p><a href="https://kotlinlang.org/docs/reference/compiler-plugins.html">Compiler Plugins<i class=""></i></a></p>
+				    <p>Kotlin has classes and their members final by default, which makes it inconvenient to use frameworks and libraries such as Spring AOP that require classes to be open. The all-open compiler plugin adapts Kotlin to the requirements of those frameworks and makes classes annotated with a specific annotation and their members open without the explicit open keyword.
+					For instance, when you use Spring, you don't need all the classes to be open, but only classes annotated with specific annotations like @Configuration or @Service. All-open allows to specify such annotations.</p>
+				     <p><a href="https://kotlinlang.org/docs/reference/code-style-migration-guide.html">Coding Conventions<i class=""></i></a></p>
 				    
 				</article>
                         </div>
