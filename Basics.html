@@ -141,6 +141,31 @@ tr:nth-child(even) {
 	    print("sum of 3 and 5 is ")
  	   println(sum(3, 5))
 }</pre>
+				    <p>Function with an expression body and inferred return type:</p>
+				    <pre>	fun sum(a: Int, b: Int) = a + b
+
+	fun main() {
+	    println("sum of 19 and 23 is ${sum(19, 23)}")
+}</pre>
+				    <p>Function returning no meaningful value:</p>
+				    <pre>	fun printSum(a: Int, b: Int): Unit {
+	    println("sum of $a and $b is ${a + b}")
+}
+
+	fun main() {
+	    printSum(-1, 8)
+}</pre>
+				    <p>Unit return type can be omitted:</p>
+				    <pre>	fun printSum(a: Int, b: Int) {
+	    println("sum of $a and $b is ${a + b}")
+	}
+
+	fun main() {
+	    printSum(-1, 8)
+}</pre>
+				<a href="https://kotlinlang.org/docs/reference/functions.html">See Functions.</a>    
+				    <h6>Defining variables</h6>
+				    
                                 <h4>Basic Types</h4>                         		 					
                                 <p>In Kotlin, everything is an object in the sense that we can call member functions and properties on any variable. Some of the types can have a special internal representation - for example, numbers, characters and booleans can be represented as primitive values at runtime - but to the user they look like ordinary classes. In this section we describe the basic types used in Kotlin: numbers, characters, booleans, arrays, and strings.
                                 </p>
