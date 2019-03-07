@@ -140,21 +140,21 @@ tr:nth-child(even) {
 	fun main() {
 	    print("sum of 3 and 5 is ")
  	   println(sum(3, 5))
-}</pre>
+	}</pre>
 				    <p>Function with an expression body and inferred return type:</p>
 				    <pre>	fun sum(a: Int, b: Int) = a + b
 
 	fun main() {
 	    println("sum of 19 and 23 is ${sum(19, 23)}")
-}</pre>
+	}</pre>
 				    <p>Function returning no meaningful value:</p>
 				    <pre>	fun printSum(a: Int, b: Int): Unit {
 	    println("sum of $a and $b is ${a + b}")
-}
+	}
 
 	fun main() {
 	    printSum(-1, 8)
-}</pre>
+	}</pre>
 				    <p>Unit return type can be omitted:</p>
 				    <pre>	fun printSum(a: Int, b: Int) {
 	    println("sum of $a and $b is ${a + b}")
@@ -162,7 +162,7 @@ tr:nth-child(even) {
 
 	fun main() {
 	    printSum(-1, 8)
-}</pre>
+	}</pre>
 				<a href="https://kotlinlang.org/docs/reference/functions.html">See Functions.</a>    
 				    <h6>Defining variables</h6>
 				    <p>Read-only local variables are defined using the keyword val. They can be assigned a value only once.</p>
@@ -172,7 +172,7 @@ tr:nth-child(even) {
 	    val c: Int  // Type required when no initializer is provided
 	    c = 3       // deferred assignment
 	    println("a = $a, b = $b, c = $c")
-}</pre>
+	}</pre>
 				    <p>Variables that can be reassigned use the var keyword:</p>
 				    <pre>	var x = 5 // `Int` type is inferred
 	x += 1</pre>
@@ -182,7 +182,7 @@ tr:nth-child(even) {
 
 	fun incrementX() { 
 	    x += 1 
-}</pre>
+	}</pre>
 				    <h6>Comments</h6>
 				   <p>Just like Java and JavaScript, Kotlin supports end-of-line and block comments.</p>
 				    <pre>	// This is an end-of-line comment
@@ -205,7 +205,7 @@ tr:nth-child(even) {
 	    } else {
 	        return b
  	   }
-}</pre>
+	}</pre>
 				    
                                 <h4>Basic Types</h4>                         		 					
                                 <p>In Kotlin, everything is an object in the sense that we can call member functions and properties on any variable. Some of the types can have a special internal representation - for example, numbers, characters and booleans can be represented as primitive values at runtime - but to the user they look like ordinary classes. In this section we describe the basic types used in Kotlin: numbers, characters, booleans, arrays, and strings.
@@ -296,7 +296,7 @@ As a consequence, smaller types are NOT implicitly converted to bigger types. Th
 	    val b: Byte = 1
     	val i: Int = b.toInt() // OK: explicitly widened
 	    print(i)
-}	</pre>
+	}	</pre>
 <p>Every number type supports the following conversions:</p>
 <pre>	-toByte(): Byte
 	-toShort(): Short
