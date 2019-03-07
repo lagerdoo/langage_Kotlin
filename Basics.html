@@ -165,7 +165,32 @@ tr:nth-child(even) {
 }</pre>
 				<a href="https://kotlinlang.org/docs/reference/functions.html">See Functions.</a>    
 				    <h6>Defining variables</h6>
+				    <p>Read-only local variables are defined using the keyword val. They can be assigned a value only once.</p>
+				    <pre>	fun main() {
+	    val a: Int = 1  // immediate assignment
+	    val b = 2   // `Int` type is inferred
+	    val c: Int  // Type required when no initializer is provided
+	    c = 3       // deferred assignment
+	    println("a = $a, b = $b, c = $c")
+}</pre>
+				    <p>Variables that can be reassigned use the var keyword:</p>
+				    <pre>	var x = 5 // `Int` type is inferred
+	x += 1</pre>
+				    <p>op-level variables:</p>
+				    <pre>	val PI = 3.14
+	var x = 0
+
+	fun incrementX() { 
+	    x += 1 
+}</pre>
+				    <h6>Comments</h6>
+				   <p>Just like Java and JavaScript, Kotlin supports end-of-line and block comments.</p>
+				    <pre>	// This is an end-of-line comment
 				    
+	/* This is a block comment
+	   on multiple lines. */</pre>
+				    
+
                                 <h4>Basic Types</h4>                         		 					
                                 <p>In Kotlin, everything is an object in the sense that we can call member functions and properties on any variable. Some of the types can have a special internal representation - for example, numbers, characters and booleans can be represented as primitive values at runtime - but to the user they look like ordinary classes. In this section we describe the basic types used in Kotlin: numbers, characters, booleans, arrays, and strings.
                                 </p>
