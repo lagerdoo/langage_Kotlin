@@ -125,8 +125,7 @@
 					For example, using the simple libgit2.
 				        def native library definition file provided in your Kotlin/Native distribution</p>
 					
-					<pre>$ cinterop -def  samples/gitchurn/src/main/c_interop/libgit2.
-					def -compilerOpts -I/usr/local/include -o libgit2 </pre>
+					<pre>$ cinterop -def  samples/gitchurn/src/main/c_interop/libgit2.def -compilerOpts -I/usr/local/include -o libgit2 </pre>
                                         
 					<p>we will obtain libgit2.klib.</p>
 					<p>See more details in INTEROP.md</p>
@@ -144,45 +143,67 @@
 					argument for specifying a repository different to the default one.</p>
 					<pre>$ klib <command> <name> -repository <directory></pre>
 					
-					
-		
-<h5>Default Imports</h5>
-<p>A number of packages are imported into every Kotlin file by default:</p>
-<pre>	-kotlin.*
-	-kotlin.annotation.*
-	-kotlin.collections.*
-	-kotlin.comparisons.* (since 1.1)
-	-kotlin.io.*
-	-kotlin.ranges.*
-	-kotlin.sequences.*
-	-kotlin.text.*
-</pre>
-<p>Additional packages are imported depending on the target platform:</p>
-<pre>
-	JVM:
-	java.lang.*
-	kotlin.jvm.*
-	JS:
-	kotlin.js.*</pre>
-	<h5>Imports</h5>
-	<p>Apart from the default imports, each file may contain its own import directives. Syntax for imports is described in the grammar.
-
-We can import either a single name, e.g.</p>
-<pre>	import foo.Bar // Bar is now accessible without qualification</pre>
-<p>or all the accessible contents of a scope (package, class, object etc):</p>
-<pre>	import foo.* // everything in 'foo' becomes accessible</pre>
-<p>If there is a name clash, we can disambiguate by using as keyword to locally rename the clashing entity:</p>
-<pre>	import foo.Bar // Bar is accessible
-	import bar.Bar as bBar // bBar stands for 'bar.Bar'</pre>
-	<p>The import keyword is not restricted to importing classes; you can also use it to import other declarations:</p>
-<pre>
-	-top-level functions and properties;
-	-functions and properties declared in object declarations;
-	-enum constants.
-</pre>
-<p>
-Unlike Java, Kotlin does not have a separate "import static" syntax; all of these declarations are imported using the regular import keyword.</p>
-				    <p> </p>
+					<h4>Several examples</h4>
+					<p>First let's create a library. Place the tiny library source code into kotlinizer.kt:</p>
+					<pre>package kotlinizer
+                                             val String.kotlinized
+                                             get() = "Kotlin $this"
+                                             $ kotlinc kotlinizer.kt -p library -o kotlinizer</pre>
+					     <p>The library has been created in the current directory:</p> 
+					     
+					  <pre>$ ls kotlinizer.klib 
+					   kotlinizer.klib</pre>   
+					   
+					  <p>Now let's check out the contents of the library:</p>
+					  <pre>$ klib contents kotlinizer</pre>
+					  <p>We can install kotlinizer to the default repository:</p>
+					  <pre>$ klib install kotlinizer</pre>
+					  <p>Remove any traces of it from the current directory:</p>
+					  <pre>$ rm kotlinizer.klib</pre>
+					  <p>Create a very short program and place it into a use.kt :</p>
+					  <pre>import kotlinizer.*
+                                           fun main(args: Array<String>) {
+                                           println("Hello, ${"world".kotlinized}!")}</pre>
+					  <p>Now compile the program linking with the library we have just created:</p>
+					  <pre>$ kotlinc use.kt -l kotlinizer -o kohello</pre>
+					  <p>And run the program:</p>
+					  <pre>$ ./kohello.kexe 
+					   Hello, Kotlin world!</pre>
+					   
+					   <h3> Advanced topics</h3>
+					   <h5>Library search sequence</h5>
+					   <p>When given a -library foo flag, the compiler searches the foo library in
+					   the following order:
+                                            * Current compilation directory or an absolute path.
+                                            * All repositories specified with `-repo` flag.
+                                            * Libraries installed in the default repository
+					     (For now the default is  `~/.konan`,
+					     however it could be changed by setting **KONAN_DATA_DIR** environment variable).
+                                            * Libraries installed in `$installation/klib` directory.</p>
+					    
+					    
+					    <h5>The library format</h5>
+					    <p>Kotlin/Native libraries are zip files containing a predefined directory structure,
+					     with the following layout:</p>
+					     <p>foo.klib when unpacked as foo/ gives us:</p>
+					     <pre>- foo/
+                                             - targets/
+                                             - $platform/
+                                             - kotlin/
+                                             - Kotlin compiled to LLVM bitcode.
+                                             - native/
+                                             - Bitcode files of additional native objects.
+                                             - $another_platform/
+                                             - There can be several platform specific kotlin and native pairs.
+                                             - linkdata/
+                                             - A set of ProtoBuf files with serialized linkage metadata.
+                                             - resources/
+                                             - General resources such as images. (Not used yet).
+                                             - manifest - A file in *java property* format describing the library.</pre>
+					     
+					     <p>An example layout can be found in klib/stdlib directory of your installation.</p>
+					    
+					    
                                 <a href="https://kotlinlang.org/docs/reference/packages.html">For more information!</a>
                             </article>
                         </div>
