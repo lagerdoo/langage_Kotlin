@@ -110,7 +110,8 @@
                             <article>
                             <h3>Kotlin/Native libraries</h3>
 				    <h5>Kotlin compiler specifics</h5>
-				    <p>To produce a library with the Kotlin/Native compiler use the -produce library or -p library flag. For example:</p>
+				    <p>To produce a library with the Kotlin/Native compiler use the -produce library or -p library flag.
+					    For example:</p>
 				    
 		         <pre>$ kotlinc foo.kt -p library -o bar</pre>
 				    
@@ -118,10 +119,33 @@
 				<p>To link to a library use the -library <name> or -l <name> flag. For example:</p>  
 					<pre>$ kotlinc qux.kt -l bar</pre>
 					<p>the above command will produce a program.kexe out of qux.kt and bar.klib</p>
-
-		<p>All the contents (such as classes and functions) of the source file are contained by the package declared. So, in the example above, the full name of baz() is foo.bar.baz, and the full name of Goo is foo.bar.Goo.
-
-If the package is not specified, the contents of such a file belong to "default" package that has no name.</p>
+					
+					<h4>cinterop tool specifics</h4>
+					<p>The cinterop tool produces .klib wrappers for native libraries as its main output.
+					For example, using the simple libgit2.
+				        def native library definition file provided in your Kotlin/Native distribution</p>
+					
+					<pre>$ cinterop -def  samples/gitchurn/src/main/c_interop/libgit2.
+					def -compilerOpts -I/usr/local/include -o libgit2 </pre>
+                                        
+					<p>we will obtain libgit2.klib.</p>
+					<p>See more details in INTEROP.md</p>
+					
+					<h5>klib utility</h5>
+					<p>The klib library management utility allows you to inspect and install the libraries.
+                                         The following commands are available.To list library contents:</p>
+					
+					<pre>$ klib contents <name></pre>
+					<p>To inspect the bookkeeping details of the library</p>
+					<pre>$ klib info <name></pre>
+					<p>To remove the library from the default repository use</p>
+					<pre>$ klib remove <name></pre>
+					<p>All of the above commands accept an additional -repository <directory> 
+					argument for specifying a repository different to the default one.</p>
+					<pre>$ klib <command> <name> -repository <directory></pre>
+					
+					
+		
 <h5>Default Imports</h5>
 <p>A number of packages are imported into every Kotlin file by default:</p>
 <pre>	-kotlin.*
