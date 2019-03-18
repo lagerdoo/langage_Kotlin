@@ -271,18 +271,18 @@
 						  when you figure out that some of the internals of your library 
 						  need to be refactored you have to break the API for your users if you want to fix it. 
 						  Let's take a look at the same class with a smaller API:</p>
-						  <pre>class MyComponent(
-                                                       val children: List<MyComponent>, // 1
-                                                       internal val drawSurface: PixelGraphicsImpl) { // 2
-                                                       fun requestFocus(){
-						       }
-                                                       fun clearFocus(){ 
-						       }
-                                                       internal fun render() { // 3
-						       }
-                                                       internal fun attachTo(container: Container) {
-						       }
-						       }</pre>
+ <pre>class MyComponent(
+	val children: List<MyComponent>, // 1
+	internal val drawSurface: PixelGraphicsImpl) { // 2
+	fun requestFocus(){
+	}
+	fun clearFocus(){ 
+	}
+	internal fun render() { // 3
+	}
+	internal fun attachTo(container: Container) {
+	}
+	}</pre>
 						       <p>So after evaluating our class it turns out that
                                                           isFocused was not needed at all and we only want our users 
 							  to be able to either clear or request the focus. 
@@ -302,18 +302,18 @@
 							  In the previous example we've cleaned up parts of our API and removed / 
 							  hid some things which were not intended to be public.
 							  Now we'll take a look at things we do expose:
-							  <pre>class MyComponent(
-                                                               val children: Iterable<Component>, // 1
-                                                               internal val drawSurface: DrawSurface) { // 2
-							       fun requestFocus() {
-							                             }
-			                                       fun clearFocus() {
-							                             }
-                                                               internal fun render() {
-							                              }
-					                       internal fun attachTo(container: Container) {
-							                                                     }
-													     }</pre>
+<pre>class MyComponent(
+	val children: Iterable<Component>, // 1
+	internal val drawSurface: DrawSurface) { // 2
+	fun requestFocus() {
+	}
+	fun clearFocus() {
+	}
+	internal fun render() {
+	}
+	internal fun attachTo(container: Container) {
+	}
+	}</pre>
                                                                <p>After careful investigation we concluded that:
                                                                   We don't really need the functionality Lists provide 
 								  for our children and an Iterable will suffice.
@@ -333,7 +333,7 @@
                                                                   All of these lead us to the realization that to clean up 
 								  this mess we should start to...</p>
 								  
-								  <h3>Use Interfaces</h3>
+ <h3>Use Interfaces</h3>
 								  <p>By taking a hard look at what we have, we can conclude that exposing classes
 								  and concrete implementations through our API will lead to all sorts of problems, 
 								  so using interfaces is a better approach overall:</p>
