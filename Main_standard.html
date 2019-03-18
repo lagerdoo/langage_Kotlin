@@ -249,18 +249,19 @@
 					     In the following examples we're going to work on an imaginary library 
 					     which exposes an API for handling UI widgets.</p>
 					     
-					     <pre>class MyComponent(
-                                                  val isFocused: Boolean,
-                                                  val children: List<MyComponent>,
-                                                  val drawSurface: PixelGraphicsImpl) {
-					          fun requestFocus() {
-                                                                     }
-                                                  fun clearFocus() {
-                                                                     }
-                                                  fun render() {
-                                                                     }
-                                                  fun attachTo(container: Container) { 
-						                                       } }</pre>
+<pre>class MyComponent(
+	val isFocused: Boolean,
+	val children: List<MyComponent>,
+	val drawSurface: PixelGraphicsImpl) {
+	fun requestFocus() {
+	}
+	fun clearFocus() {
+	}
+	fun render() {
+	}
+	fun attachTo(container: Container) { 
+	} }
+</pre>
 						  <p>Here we expose the MyComponent class which has a property to tell whether it is focused,
 						  it exposes its children, and also the draw surface which is used for rendering.
                                                   There are a lot of cases when you might have the feeling that you need to expose
