@@ -447,41 +447,45 @@
 											      One of them is that we need to use @PublishedApi if we want to access the internals of a class.
 											      For this reason it helps greatly if we simply delegate the work from them to functions which take
 											      KClass objects as parameters so we get the utility of reified functions without the problems:</p>
-											      <pre>class EventBus {
-											           private val subscriptions =
-												   mutableMapOf<KClass<out Any>, (Any) -> Unit>()
-												   
-												   inline fun <reified T : Event> subscribe(
-												   noinline callback: (T) -> Unit) {
-												   return subscribe(
-												   klass = T::class,
-												   callback = callback)
-												    }
-												   fun <T : Event> subscribe(klass: KClass<T>,
-												   callback: (T) -> Unit) {
-												   subscriptions[klass] = callback as (Any) -> Unit
-												   }
-												   }
-												   <p>Astute readers might spot the problem with this API.
-												      We're not using interfaces! Unfortunately interfaces don't support reified functions, 
-												      but there is a solution which solves this problem:</p>
+											     
+<pre>class EventBus {
+	private val subscriptions =
+	mutableMapOf<KClass<out Any>, (Any) -> Unit>()
+	inline fun <reified T : Event> subscribe(
+	noinline callback: (T) -> Unit) {
+	return subscribe(
+	klass = T::class,
+	callback = callback)
+	}
+	fun <T : Event> subscribe(klass: KClass<T>,
+	callback: (T) -> Unit) {
+	subscriptions[klass] = callback as (Any) -> Unit
+	}
+	}
+	</pre>
+	<p>Astute readers might spot the problem with this API.
+	We're not using interfaces! Unfortunately interfaces don't support reified functions, 
+	but there is a solution which solves this problem:</p>
 												      <h4>Let reified Functions be Extension Functions</h4>
 												      <p>It is true that we can't have reified functions in an interface:</p>
-												      <pre>interface EventBus {
-                                                                                                             fun <T : Event> subscribe(klass: KClass<T>,
-													                                callback: (T) -> Unit)
-																	}</pre>
+
+<pre>interface EventBus {
+	fun <T : Event> subscribe(klass: KClass<T>,
+	callback: (T) -> Unit)
+	}</pre>
 												      <p>but we can have reified extension functions:</p>
-												      <pre>inline fun <reified T : Event> EventBus.subscribe(
-												           noinline callback: (T) -> Unit) {
-													   return subscribe(
-													   klass = T::class,
-													   callback = callback)
-													   }</pre>
-													   <p>With this we get the best of both worlds, and usage stays the same:</p>
-													   <pre>fun usage() {
-													        EventBus().subscribe<Event> {  }
-														}</pre>
+												     
+<pre>inline fun <reified T : Event> EventBus.subscribe(
+	noinline callback: (T) -> Unit) {
+	return subscribe(
+	klass = T::class,
+	callback = callback)
+	}</pre>
+	<p>With this we get the best of both worlds, and usage stays the same:</p>
+													   
+<pre>fun usage() {
+	EventBus().subscribe<Event> {  }
+	}</pre>
 														<p>The tips above are applicable to any Kotlin
 														   project but there is a special kind of project which needs more care than a regular one:</p>
 														<h4>Multiplatform Libraries</h4>  
