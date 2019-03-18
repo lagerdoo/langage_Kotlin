@@ -485,7 +485,22 @@
 														   you need to write code which is idiomatic on all platforms.
 														   In the following section we'll take a look at some tips that will help with this.</p>
 														   <h5>Use Properties Instead of Getters</h5>
-												   </pre>
+											             <p>Writing a getter (getX) for a property is not idiomatic in Kotlin. On the other hand,
+												     accessing fields in Java without getters is not idiomatic either! 
+												     It turns out that Kotlin properties are implemented in a way that both sides
+												     will see an API they wish to see:</p>
+												     <pre>interface Position {
+												           val x: Int
+													   val y: Int
+													   }
+													   // idiomatic in Kotlin
+													   pos.x
+													   pos.y
+													   // idiomatic in Java
+													   pos.getX();
+													   pos.getY();
+													   
+                                                                                                                </pre>
 
                                 <a href="https://kotlinlang.org/docs/reference/packages.html">For more information!</a>
                             </article>
