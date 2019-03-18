@@ -403,32 +403,33 @@
 										      enable your users to define extension functions on your classes 
 										      which can be invoked without an instance. 
 										      You can add an empty companion object:</p>
-										   <pre>interface Subscription {
-										         fun cancel()
-											 companion object
-											                       }</pre>
+ <pre>interface Subscription {
+ 	fun cancel()
+	companion object
+	}</pre>
 					                                            <p>and your users gain the ability to augment your interface
 										       as they see fit:</p>
-										    <pre>fun Subscription.Companion.create(): Subscription {
-										          TODO("Create new Subscription")
-											  }
-											  fun useIt() {
-											  Subscription.create()
-											  }</pre>
-										     <h4>Take Extension Functions to the Next Level</h4>
+ <pre>fun Subscription.Companion.create(): Subscription {
+ 	TODO("Create new Subscription")
+	}
+	fun useIt() {
+	Subscription.create()
+	}
+	</pre>
+									     <h4>Take Extension Functions to the Next Level</h4>
 										     <p>Extension functions can also help you to create
 										        a more fluent API. Take a look at this example, 
 										        where our user has a list of Subscriptions:</p>
-											<pre>val subscriptions: MutableList<Subscription> =
-											     mutableListOf()</pre>
-											<p>In order to cancel them all, they most probably write 
+											
+<pre>	val subscriptions: MutableList<Subscription> = mutableListOf()</pre>
+<p>In order to cancel them all, they most probably write 
 											   something like this:</p>
-											<pre>fun cancelAllSubscriptions() {
-											     subscriptions.forEach {
-											     it.cancel()
-											      }
-											     subscriptions.clear()
-											      }</pre>
+<pre>fun cancelAllSubscriptions() {
+	subscriptions.forEach {
+	it.cancel()
+	}
+	subscriptions.clear()
+	}</pre>
 											 <p>But what if we provide this functionality out of the box?</p>
 											 <pre>fun <T: Subscription> MutableList<T>.cancelAll() {
 											        forEach {
