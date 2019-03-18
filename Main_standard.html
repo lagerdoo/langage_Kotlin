@@ -497,20 +497,20 @@
 												     accessing fields in Java without getters is not idiomatic either! 
 												     It turns out that Kotlin properties are implemented in a way that both sides
 												     will see an API they wish to see:</p>
-												     <pre>interface Position {
-												           val x: Int
-													   val y: Int
-													   }
-													   // idiomatic in Kotlin
-													   pos.x
-													   pos.y
-													   // idiomatic in Java
-													   pos.getX();
-													   pos.getY();
-													   
-                                                                                                                </pre>
 
-                                <a href="https://kotlinlang.org/docs/reference/packages.html">For more information!</a>
+<pre>interface Position {
+	val x: Int
+	val y: Int
+	}
+	// idiomatic in Kotlin
+	pos.x
+	pos.y
+	// idiomatic in Java
+	pos.getX();												
+	pos.getY();
+	</pre>
+
+                                <a href="https://kotlinlang.org/docs/reference/native/libraries.html">For more information!</a>
                             </article>
                         </div>
                     </div> 
