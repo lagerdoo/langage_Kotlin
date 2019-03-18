@@ -250,19 +250,92 @@
 					     which exposes an API for handling UI widgets.</p>
 					     
 					     <pre>class MyComponent(
-                                                        val isFocused: Boolean,
-                                                        val children: List<MyComponent>,
-                                                        val drawSurface: PixelGraphicsImpl) {
+                                                  val isFocused: Boolean,
+                                                  val children: List<MyComponent>,
+                                                  val drawSurface: PixelGraphicsImpl) {
 					          fun requestFocus() {
                                                                      }
                                                   fun clearFocus() {
                                                                      }
                                                   fun render() {
                                                                      }
-                                                  fun attachTo(container: Container) {
-                                                                                               }
-											       }</pre>
-
+                                                  fun attachTo(container: Container) { 
+						                                       } }</pre>
+						  <p>Here we expose the MyComponent class which has a property to tell whether it is focused,
+						  it exposes its children, and also the draw surface which is used for rendering.
+                                                  There are a lot of cases when you might have the feeling that you need to expose
+						  things because you think that it might be useful for you users. 
+						  What actually happens most of the time is that you expose too much,
+						  your users start to rely on them and later 
+						  when you figure out that some of the internals of your library 
+						  need to be refactored you have to break the API for your users if you want to fix it. 
+						  Let's take a look at the same class with a smaller API:</p>
+						  <pre>class MyComponent(
+                                                       val children: List<MyComponent>, // 1
+                                                       internal val drawSurface: PixelGraphicsImpl) { // 2
+                                                       fun requestFocus(){
+						       }
+                                                       fun clearFocus(){ 
+						       }
+                                                       internal fun render() { // 3
+						       }
+                                                       internal fun attachTo(container: Container) {
+						       }
+						       }</pre>
+						       <p>So after evaluating our class it turns out that
+                                                          isFocused was not needed at all and we only want our users 
+							  to be able to either clear or request the focus. 
+							  With this we preserved the same functionality but retained the ability 
+							  to handle focus in any way we wish.
+                                                          drawSurface is something which we take as a dependency,
+							  but it is internal to our library so we shouldn't allow the external world
+							  to tamper with it. 
+							  It happens quite often that users start to use 
+							  things which you exposed in ways you didn't intend it 
+							  to work so this helps with that problem.
+                                                          It also turns out that render and attachTo had the same problem
+							  as drawSurface: they are internal to the library and the users shouldn't do
+							  rendering or component (re)attaching by hand.
+                                                          Let's take this a step further by introducing better abstractions.</p>
+							  <h4>Keep Your API Abstract and Clean</h4>
+							  In the previous example we've cleaned up parts of our API and removed / 
+							  hid some things which were not intended to be public.
+							  Now we'll take a look at things we do expose:
+							  <pre>class MyComponent(
+                                                               val children: Iterable<Component>, // 1
+                                                               internal val drawSurface: DrawSurface) { // 2
+							       fun requestFocus() {
+							                             }
+			                                       fun clearFocus() {
+							                             }
+                                                               internal fun render() {
+							                              }
+					                       internal fun attachTo(container: Container) {
+							                                                     }
+													     }</pre>
+                                                               <p>After careful investigation we concluded that:
+                                                                  We don't really need the functionality Lists provide 
+								  for our children and an Iterable will suffice.
+                                                                  A good example for this is that if you expose a List of 
+								  something which your users just want to iterate over with
+								  a for loop you either lose the ability to construct items 
+								  on the fly or make it much harder to implement.
+                                                                  With an Iterable or a Sequence you can do this easily. 
+								  It also enables you to return an insanely high number of elements
+								  without filling up the memory.
+                                                                  As it turns out PixelGraphicsImpl is a concrete implementation 
+								  of DrawSurface and it has some internal things which 
+								  we don't want to expose. 
+								  It can become problematic if we expose implementation classes 
+								  through the API and make it impossible to change the implementation
+								  behind the scenes without breaking your users' code.
+                                                                  All of these lead us to the realization that to clean up 
+								  this mess we should start to...</p>
+								  
+								  <h3>Use Interfaces</h3>
+								  <p>By taking a hard look at what we have, we can conclude that exposing classes
+								  and concrete implementations through our API will lead to all sorts of problems, 
+								  so using interfaces is a better approach overall:</p>
 					    
                                 <a href="https://kotlinlang.org/docs/reference/packages.html">For more information!</a>
                             </article>
