@@ -209,7 +209,37 @@
 </pre>
 					     
 					     <p>An example layout can be found in klib/stdlib directory of your installation.</p>
-					    
+					     
+					     <h3>Platform libraries</h3>
+					     <h5>Overview</h5>
+					     <p>To provide access to user's native operating system services,
+					     Kotlin/Native distribution includes a set of prebuilt libraries specific to each target. 
+					     We call them Platform Libraries.</p>
+					     <h5>POSIX bindings</h5>
+					     <p>For all Unix or Windows based targets
+					     (including Android and iPhone) we provide the posix platform lib.
+					     It contains bindings to platform's implementation of POSIX standard.
+                                             To use the library just</p>
+					     <pre>import platform.posix.*</pre>
+					     <p>The only target for which it is not available is WebAssembly.
+                                              Note that the content of platform.posix is NOT identical on different platforms,
+                                             in the same way as different POSIX implementations are a little different.</p>
+					     <h5>Popular native libraries</h5>
+					     <p>There are many more platform libraries available for host and cross-compilation targets.
+					     Kotlin/Native distribution provides access to OpenGL, SDL, 
+					     zlib and other popular native libraries on applicable platforms.</p>
+					     <p>On Apple platforms objc library is provided for interoperability with Objective-C.
+					     Inspect the contents of dist/klib/platform/$target of the distribution for the details.</p>
+					     <h4>Availability by default</h4>
+					     <p>The packages from platform libraries are available by default.
+					     No special link flags need to be specified to use them. 
+					     Kotlin/Native compiler automatically detects which of the platform libraries 
+					     have been accessed and automatically links the needed libraries.</p>
+					     <p>On the other hand, the platform libs in the distribution are merely 
+					     just wrappers and bindings to the native libraries.
+					     That means the native libraries themselves (.so, .a, .dylib, .dll etc) should be installed on the machine.</p>
+					     
+
 					    
                                 <a href="https://kotlinlang.org/docs/reference/packages.html">For more information!</a>
                             </article>
