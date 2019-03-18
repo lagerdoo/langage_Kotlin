@@ -338,35 +338,35 @@
 								  and concrete implementations through our API will lead to all sorts of problems, 
 								  so using interfaces is a better approach overall:</p>
 <pre>interface Component {
-val children: Iterable<Component>
-fun requestFocus()
-fun clearFocus()
-}
-class MyComponent(
-override val children: Iterable<Component>,
-val drawSurface: DrawSurface) : Component {
-override fun requestFocus() {
-}                                                                      
-override fun clearFocus() {
-}                                                                        
-fun render() {
-}
-fun attachTo(container: Container) {
-}
-}</pre>
+	val children: Iterable<Component>
+	fun requestFocus()
+	fun clearFocus()
+	}
+	class MyComponent(
+	override val children: Iterable<Component>,
+	val drawSurface: DrawSurface) : Component {
+	override fun requestFocus() {
+	}                                                                      
+	override fun clearFocus() {
+	}                                                                        
+	fun render() {
+	}
+	fun attachTo(container: Container) {
+	}
+	}</pre>
 			                                                <p>This way we are free to implement Component as we see fit.
 									We can have any number of implementations for it if we want and it won't affect our users.
 									An important caveat for this is to only return abstract types from our factories:</p>
 									
 <pre>object ComponentFactory {
-fun createComponent(
-children: Iterable<Component>,
-drawSurface: DrawSurface): Component {
-return MyComponent(
-children = children,
-drawSurface = drawSurface)
-}
-}</pre>
+	fun createComponent(
+	children: Iterable<Component>,
+	drawSurface: DrawSurface): Component {
+	return MyComponent(
+	children = children,
+	drawSurface = drawSurface)
+	}
+	}</pre>
 													   
 							                    <p>This might seem obvious, but this is often overlooked.</p>
  					                                    <h4>The Modularization Problem</h4>
@@ -378,18 +378,20 @@ drawSurface = drawSurface)
 									    What we can do is to separate our packages 
 									    into api and internal (or anything similar) and clearly state
 									    in the documentation that everything in internal is subject to change:</p>
-									    <pre>// safe to use
-									          package api
-										  interface Component
-                                                                                  interface DrawSurface
-                                                                                  interface Container
-										  // use them at your own risk!
-										   package internal
-										   class MyComponent : Component
-										   class ThreadSafeComponent: Component
-										   class PixelGraphicsImpl : DrawSurface
-										   class DefaultContainer : Container
-										   <p>This solution is not perfect, but it helps.</p>
+ <pre>// safe to use
+ 	package api
+	interface Component
+	interface DrawSurface
+	interface Container
+	// use them at your own risk!
+	package internal
+	class MyComponent : Component
+	class ThreadSafeComponent: Component
+	class PixelGraphicsImpl : DrawSurface
+	class DefaultContainer : Container
+	</pre>
+	
+	<p>This solution is not perfect, but it helps.</p>
 										   <h4>Kotlin Tips</h4>
 										   <p>We've discussed a lot of things already, 
 										      but we haven't seen any Kotlin-specific tips yet, 
