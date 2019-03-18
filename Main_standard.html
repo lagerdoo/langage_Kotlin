@@ -336,7 +336,83 @@
 								  <p>By taking a hard look at what we have, we can conclude that exposing classes
 								  and concrete implementations through our API will lead to all sorts of problems, 
 								  so using interfaces is a better approach overall:</p>
-					    
+								  <pre>interface Component {
+                                                                        val children: Iterable<Component>
+                                                                        fun requestFocus()
+                                                                        fun clearFocus()
+                                                                                            }
+
+                                                                        class MyComponent(
+                                                                        override val children: Iterable<Component>,
+                                                                        val drawSurface: DrawSurface) : Component {
+                                                                        override fun requestFocus() {
+									                            }
+                                                                        override fun clearFocus() {
+									                            }
+                                                                        fun render() {
+									                }
+                                                                        fun attachTo(container: Container) {
+									                                     }
+													     }</pre>
+			                                                <p>This way we are free to implement Component as we see fit.
+									We can have any number of implementations for it if we want and it won't affect our users.
+									An important caveat for this is to only return abstract types from our factories:</p>
+									<pre>object ComponentFactory {
+                                                                              fun createComponent(
+									      children: Iterable<Component>,
+                                                                              drawSurface: DrawSurface): Component {
+                                                                              return MyComponent(
+                                                                              children = children,
+                                                                              drawSurface = drawSurface)
+                                                                                                         }
+                                                                                                           }</pre>
+													   
+							                    <p>This might seem obvious, but this is often overlooked.</p>
+ 					                                    <h4>The Modularization Problem</h4>
+									    <p>So we separated our API and our concrete implementations into 
+									    interfaces and classes.
+									    The problem is that we can't prevent our users from circumventing 
+									    our clean API and using MyComponent directly since Kotlin
+									    doesn't have its own module system.
+									    What we can do is to separate our packages 
+									    into api and internal (or anything similar) and clearly state
+									    in the documentation that everything in internal is subject to change:</p>
+									    <pre>// safe to use
+									          package api
+										  interface Component
+                                                                                  interface DrawSurface
+                                                                                  interface Container
+										  // use them at your own risk!
+										   package internal
+										   class MyComponent : Component
+										   class ThreadSafeComponent: Component
+										   class PixelGraphicsImpl : DrawSurface
+										   class DefaultContainer : Container
+										   <p>This solution is not perfect, but it helps.</p>
+										   <h4>Kotlin Tips</h4>
+										   <p>We've discussed a lot of things already, 
+										   but we haven't seen any Kotlin-specific tips yet, 
+										   so let's take a look at some!</p>
+										   <h4>Add a companion object</h4>
+										   <p>It might be a case that you don't use companion objects in your
+										   project or you don't have the need for them in some API classes.
+										   What's important to point out here is that companion objects
+										   enable your users to define extension functions on your classes 
+										   which can be invoked without an instance. 
+										   You can add an empty companion object:</p>
+										   <pre>interface Subscription {
+										         fun cancel()
+											 companion object
+											                       }</pre>
+					                                            <p>and your users gain the ability to augment your interface
+										    as they see fit:</p>
+										    <pre>fun Subscription.Companion.create(): Subscription {
+										          TODO("Create new Subscription")
+											  }
+											  fun useIt() {
+											  Subscription.create()
+											  }</pre>
+
                                 <a href="https://kotlinlang.org/docs/reference/packages.html">For more information!</a>
                             </article>
                         </div>
