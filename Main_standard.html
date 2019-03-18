@@ -337,36 +337,36 @@
 								  <p>By taking a hard look at what we have, we can conclude that exposing classes
 								  and concrete implementations through our API will lead to all sorts of problems, 
 								  so using interfaces is a better approach overall:</p>
-								  <pre>interface Component {
-                                                                        val children: Iterable<Component>
-                                                                        fun requestFocus()
-                                                                        fun clearFocus()
-                                                                                            }
-
-                                                                        class MyComponent(
-                                                                        override val children: Iterable<Component>,
-                                                                        val drawSurface: DrawSurface) : Component {
-                                                                        override fun requestFocus() {
-									                            }
-                                                                        override fun clearFocus() {
-									                            }
-                                                                        fun render() {
-									                }
-                                                                        fun attachTo(container: Container) {
-									                                     }
-													     }</pre>
+<pre>interface Component {
+val children: Iterable<Component>
+fun requestFocus()
+fun clearFocus()
+}
+class MyComponent(
+override val children: Iterable<Component>,
+val drawSurface: DrawSurface) : Component {
+override fun requestFocus() {
+}                                                                      
+override fun clearFocus() {
+}                                                                        
+fun render() {
+}
+fun attachTo(container: Container) {
+}
+}</pre>
 			                                                <p>This way we are free to implement Component as we see fit.
 									We can have any number of implementations for it if we want and it won't affect our users.
 									An important caveat for this is to only return abstract types from our factories:</p>
-									<pre>object ComponentFactory {
-                                                                              fun createComponent(
-									      children: Iterable<Component>,
-                                                                              drawSurface: DrawSurface): Component {
-                                                                              return MyComponent(
-                                                                              children = children,
-                                                                              drawSurface = drawSurface)
-                                                                                                         }
-                                                                                                           }</pre>
+									
+<pre>object ComponentFactory {
+fun createComponent(
+children: Iterable<Component>,
+drawSurface: DrawSurface): Component {
+return MyComponent(
+children = children,
+drawSurface = drawSurface)
+}
+}</pre>
 													   
 							                    <p>This might seem obvious, but this is often overlooked.</p>
  					                                    <h4>The Modularization Problem</h4>
