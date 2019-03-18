@@ -391,27 +391,101 @@
 										   <p>This solution is not perfect, but it helps.</p>
 										   <h4>Kotlin Tips</h4>
 										   <p>We've discussed a lot of things already, 
-										   but we haven't seen any Kotlin-specific tips yet, 
-										   so let's take a look at some!</p>
+										      but we haven't seen any Kotlin-specific tips yet, 
+										      so let's take a look at some!</p>
 										   <h4>Add a companion object</h4>
 										   <p>It might be a case that you don't use companion objects in your
-										   project or you don't have the need for them in some API classes.
-										   What's important to point out here is that companion objects
-										   enable your users to define extension functions on your classes 
-										   which can be invoked without an instance. 
-										   You can add an empty companion object:</p>
+										      project or you don't have the need for them in some API classes.
+										      What's important to point out here is that companion objects
+										      enable your users to define extension functions on your classes 
+										      which can be invoked without an instance. 
+										      You can add an empty companion object:</p>
 										   <pre>interface Subscription {
 										         fun cancel()
 											 companion object
 											                       }</pre>
 					                                            <p>and your users gain the ability to augment your interface
-										    as they see fit:</p>
+										       as they see fit:</p>
 										    <pre>fun Subscription.Companion.create(): Subscription {
 										          TODO("Create new Subscription")
 											  }
 											  fun useIt() {
 											  Subscription.create()
 											  }</pre>
+										     <h4>Take Extension Functions to the Next Level</h4>
+										     <p>Extension functions can also help you to create
+										        a more fluent API. Take a look at this example, 
+										        where our user has a list of Subscriptions:</p>
+											<pre>val subscriptions: MutableList<Subscription> =
+											     mutableListOf()</pre>
+											<p>In order to cancel them all, they most probably write 
+											   something like this:</p>
+											<pre>fun cancelAllSubscriptions() {
+											     subscriptions.forEach {
+											     it.cancel()
+											      }
+											     subscriptions.clear()
+											      }</pre>
+											 <p>But what if we provide this functionality out of the box?</p>
+											 <pre>fun <T: Subscription> MutableList<T>.cancelAll() {
+											        forEach {
+												it.cancel()
+												 }
+												 clear()
+												 }</pre>
+											 <p>This way cancelAll can be called on any MutableList which holds Subscriptions:</p>
+											 <pre>fun usage() {
+											      val subscriptions = mutableListOf<Subscription>()
+											      subscriptions.cancelAll()
+											      }</pre>
+											      <h4>Have reified Functions Delegate Work</h4>
+											      <P>reified functions are very useful but they come with some caveats that are very frustrating.
+											      One of them is that we need to use @PublishedApi if we want to access the internals of a class.
+											      For this reason it helps greatly if we simply delegate the work from them to functions which take
+											      KClass objects as parameters so we get the utility of reified functions without the problems:</p>
+											      <pre>class EventBus {
+											           private val subscriptions =
+												   mutableMapOf<KClass<out Any>, (Any) -> Unit>()
+												   
+												   inline fun <reified T : Event> subscribe(
+												   noinline callback: (T) -> Unit) {
+												   return subscribe(
+												   klass = T::class,
+												   callback = callback)
+												    }
+												   fun <T : Event> subscribe(klass: KClass<T>,
+												   callback: (T) -> Unit) {
+												   subscriptions[klass] = callback as (Any) -> Unit
+												   }
+												   }
+												   <p>Astute readers might spot the problem with this API.
+												      We're not using interfaces! Unfortunately interfaces don't support reified functions, 
+												      but there is a solution which solves this problem:</p>
+												      <h4>Let reified Functions be Extension Functions</h4>
+												      <p>It is true that we can't have reified functions in an interface:</p>
+												      <pre>interface EventBus {
+                                                                                                             fun <T : Event> subscribe(klass: KClass<T>,
+													                                callback: (T) -> Unit)
+																	}</pre>
+												      <p>but we can have reified extension functions:</p>
+												      <pre>inline fun <reified T : Event> EventBus.subscribe(
+												           noinline callback: (T) -> Unit) {
+													   return subscribe(
+													   klass = T::class,
+													   callback = callback)
+													   }</pre>
+													   <p>With this we get the best of both worlds, and usage stays the same:</p>
+													   <pre>fun usage() {
+													        EventBus().subscribe<Event> {  }
+														}</pre>
+														<p>The tips above are applicable to any Kotlin
+														   project but there is a special kind of project which needs more care than a regular one:</p>
+														<h4>Multiplatform Libraries</h4>  
+														<p>If you are working on a multiplatform library
+														   you need to write code which is idiomatic on all platforms.
+														   In the following section we'll take a look at some tips that will help with this.</p>
+														   <h5>Use Properties Instead of Getters</h5>
+												   </pre>
 
                                 <a href="https://kotlinlang.org/docs/reference/packages.html">For more information!</a>
                             </article>
