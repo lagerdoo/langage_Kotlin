@@ -158,6 +158,24 @@ OkHttp supports Android 5.0+ (API level 21+) and Java 8+.
     	return response.body().string();
   	}
      }</pre>
+				    <p>POST TO A SERVER</p>
+
+<p>This program posts data to a service</p>
+				    <pre>
+	public static final MediaType JSON
+	= MediaType.get("application/json; charset=utf-8");
+	OkHttpClient client = new OkHttpClient();
+
+	String post(String url, String json) throws IOException {
+	  RequestBody body = RequestBody.create(JSON, json);
+	  Request request = new Request.Builder()
+	      .url(url)
+	      .post(body)
+	      .build();
+	  try (Response response = client.newCall(request).execute()) {
+	    return response.body().string();
+	  }
+	}</pre>
 				    
 				    <h6>Anko library</h6>
 				    <p>Anko is a library specifically created for Kotlin to help build Android UI applications</p>
